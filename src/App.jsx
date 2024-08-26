@@ -1,7 +1,7 @@
 import './App.css'
 
 // react-router-dom
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 
 // pages
 import Home from './pages/Home'
@@ -16,6 +16,9 @@ function App() {
 
         <nav>
           <h1>My artikles</h1>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
 
         <Routes>

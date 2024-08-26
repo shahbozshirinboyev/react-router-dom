@@ -21,4 +21,13 @@ nav h1 {
 nav a {
   color: #333;
   padding: 4px 10px;
+  text-decoration: none;
+}
+nav a:hover {
+  font-weight: bold;
+}
+nav a.active{
+  color: white;
+  background: #333;
+  text-decoration: none;
 }
