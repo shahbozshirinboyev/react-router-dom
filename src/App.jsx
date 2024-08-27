@@ -17,26 +17,36 @@ import RootLayout from './layout/RootLayout'
 // pages
 import Home from './pages/Home'
 import About from './pages/About'
-import Contact from './pages/Contact'
+import Faq from './pages/help/Faq'
+import Form from './pages/help/Form'
+import ContactLayout from './layout/ContactLayout'
 
 function App() {
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
-       <Route element={<RootLayout />} >  
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+      <Route path='/' element={<RootLayout />} >
+
+        <Route index element={<Home />} />
+        <Route path='about' element={<About />} />
+
+        <Route path='contact' element={<ContactLayout />}>
+
+          <Route path='form' element={<Form />} />
+          <Route path='faq' element={<Faq />} />
+
+        </Route>
+
       </Route>
     )
   )
 
 
-return (
-  <div className='App'>
+  return (
+    <div className='App'>
       <RouterProvider router={routes} />
-  </div>
-)
+    </div>
+  )
 }
 
 export default App
