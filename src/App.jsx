@@ -1,7 +1,18 @@
 import './App.css'
 
-// react-router-dom
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+// react-router-dom version v6
+// import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+
+// react-router-dom version v6.12
+import {
+  createBrowserRouter,          // BrowserRouter, 
+  createRoutesFromElements,    // Routes, 
+  RouterProvider,              // Route, 
+  Route
+} from 'react-router-dom'
+
+// layout
+import RootLayout from './layout/RootLayout'
 
 // pages
 import Home from './pages/Home'
@@ -10,26 +21,22 @@ import Contact from './pages/Contact'
 
 function App() {
 
-  return (
-    <div className='App'>
-      <BrowserRouter>
-
-        <nav>
-          <h1>My artikles</h1>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-        </nav>
-
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
-
-      </BrowserRouter>
-    </div>
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+       <Route element={<RootLayout />} >  
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+      </Route>
+    )
   )
+
+
+return (
+  <div className='App'>
+      <RouterProvider router={routes} />
+  </div>
+)
 }
 
 export default App
