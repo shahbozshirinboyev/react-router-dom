@@ -21,6 +21,8 @@ import Faq from './pages/help/Faq'
 import Form from './pages/help/Form'
 import ContactLayout from './layout/ContactLayout'
 import PageNotFound from './pages/PageNotFound'
+import ArticlesLayout from './layout/ArticlesLayout'
+import Articles from './pages/articles/Articles'
 
 function App() {
 
@@ -36,9 +38,13 @@ function App() {
           <Route path='faq' element={<Faq />} />
         </Route>
 
+        <Route path='articles' element={<ArticlesLayout />}>
+          <Route index element={<Articles />} />
+        </Route>
+
         // PageNotFound
         <Route path='*' element={<PageNotFound />} />
-        
+
       </Route>
     )
   )
