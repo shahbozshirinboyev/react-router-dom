@@ -20,6 +20,7 @@ import About from './pages/About'
 import Faq from './pages/help/Faq'
 import Form from './pages/help/Form'
 import ContactLayout from './layout/ContactLayout'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
 
@@ -31,12 +32,13 @@ function App() {
         <Route path='about' element={<About />} />
 
         <Route path='contact' element={<ContactLayout />}>
-
           <Route path='form' element={<Form />} />
           <Route path='faq' element={<Faq />} />
-
         </Route>
 
+        // PageNotFound
+        <Route path='*' element={<PageNotFound />} />
+        
       </Route>
     )
   )
