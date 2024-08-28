@@ -13,6 +13,7 @@ import {
 
 // layout
 import RootLayout from './layout/RootLayout'
+import ArticlesDetasil from './pages/articles/ArticlesDetasil'
 
 // pages
 import Home from './pages/Home'
@@ -40,6 +41,7 @@ function App() {
 
         <Route path='articles' element={<ArticlesLayout />}>
           <Route index element={<Articles />} />
+          <Route path=':id' element={<ArticlesDetasil />} />
         </Route>
 
         // PageNotFound

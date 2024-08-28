@@ -17,7 +17,7 @@ function Articles() {
           <div className='card' key={article.id}>
             <h3>Title: {article.title}</h3>
             <p>Author: <i>{article.author}</i></p>
-            <NavLink to='' style={{textDecoration: 'none', fontWeight: 'bold'}}>Read More</NavLink>
+            <NavLink to={`/articles/${article.id}`} style={{textDecoration: 'none', fontWeight: 'bold'}}>Read More</NavLink>
           </div>
         )
       } )}
