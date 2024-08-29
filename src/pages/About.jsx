@@ -1,5 +1,4 @@
 function About() {
-  console.log(nice)
   return (
     <div>
       <h1>About</h1>
