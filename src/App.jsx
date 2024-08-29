@@ -19,7 +19,7 @@ import About from "./pages/About";
 import Faq from "./pages/help/Faq";
 import Form from "./pages/help/Form";
 import ContactLayout from "./layout/ContactLayout";
-import PageNotFound from "./pages/PageNotFound";
+import ErrorPage from "./pages/ErrorPage";
 import ArticlesLayout from "./layout/ArticlesLayout";
 import Articles from "./pages/articles/Articles";
 
@@ -29,7 +29,7 @@ function App() {
       {
         path: '/',
         element: <RootLayout />,
-        errorElement: <PageNotFound />,
+        errorElement: <ErrorPage />,
         children: [
           {
             index: true,
