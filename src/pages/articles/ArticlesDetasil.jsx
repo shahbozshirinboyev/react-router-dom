@@ -1,7 +1,26 @@
+import { useParams } from "react-router-dom"
+import { useFetch } from "../../hooks/useFetch"
+
 function ArticlesDetasil() {
+
+  const { id } = useParams()
+  const url = "http://localhost:5173/articles/" + id
+  const  {data: article, error, isPending} = useFetch(url)
+
   return (
     <div>
-      <h2>Bu yangi sahifa</h2>
+      {isPending && <h3>Loading ...</h3> }
+      {error && <h3>{error}</h3> }
+      {article && <>
+        <img src={article.image} alt={article.title} height={300} />
+        <h2>Title: {article.title}</h2>
+        <p>Author: <i>{article.author}</i></p>
+        <p>
+          {article.body}
+        </p>
+      </>
+      }
+
     </div>
   )
 }
