@@ -12,7 +12,7 @@ function BreadCrumps() {
       currentLink.push(`/${crumb}`);
       return (
         <div className="crumb" key={crumb}>
-          <Link to={currentLink.join('')} >{crumb}</Link>
+          <Link to={currentLink.join("")}>{crumb}</Link>
         </div>
       );
     });
