@@ -1,25 +1,26 @@
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom";
+import BreadCrumps from "../components/BreadCrumps";
 
 function RootLayout() {
-    return (
-        <>
-            <header>
-                <nav>
-                    <h1>My Website</h1>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/articles">Articles</NavLink>
-                    <NavLink to="/about">About</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
-                </nav>
-            </header>
+  return (
+    <>
+      <nav>
+        <h1>My Website</h1>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/articles">Articles</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </nav>
 
-            <main>
-                < Outlet />
-            </main>
+      <BreadCrumps />
 
-            <footer></footer>
-        </>
-    )
+      <main>
+        <Outlet />
+      </main>
+
+      <footer></footer>
+    </>
+  );
 }
 
-export default RootLayout
+export default RootLayout;
